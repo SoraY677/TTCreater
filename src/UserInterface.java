@@ -11,9 +11,11 @@ import java.awt.event.ActionListener;
 
 public class UserInterface extends JFrame implements ActionListener{
 
-    //状態変数
-    private int state = 0;
-    private JPanel nowpanel = null;
+    //定数
+    private static final String st101 = "Shift-Borad";
+    private static final String st102 = "Open";
+    private static final String st201 = "Close";
+
     JPanel mainpanel = new JPanel();
     JPanel panel101 = new JPanel();
     JPanel panel102 = new JPanel();
@@ -23,39 +25,36 @@ public class UserInterface extends JFrame implements ActionListener{
 
 
     public UserInterface(){
-        mainpanel.setLayout(clayout);
         /*Creating Menubar*/
         JMenuBar menubar = new JMenuBar();
         JMenu menu1 = new JMenu("menu1");
         JMenu menu2 = new JMenu("menu2");
         menubar.add(menu1);
         menubar.add(menu2);
-        JMenuItem menuitem1 = new JMenuItem("Shift-Board");
-        JMenuItem menuitem2 = new JMenuItem("Open");
-        JMenuItem menuitem3 = new JMenuItem("Close");
+        JMenuItem menuitem1 = new JMenuItem(st101);
+        JMenuItem menuitem2 = new JMenuItem(st102);
+        JMenuItem menuitem3 = new JMenuItem(st201);
         menu1.add(menuitem1);
         menu1.add(menuitem2);
         menu1.add(menuitem3);
         setJMenuBar(menubar);
 
-        panel101.setBackground(Color.red);
-        this.add(panel101);panel101.setVisible(true);
-        panel102.setBackground(Color.white);
-        this.add(panel102);panel102.setVisible(true);
-        panel201.setBackground(Color.black);
-        this.add(panel201);panel201.setVisible(true);
-        mainpanel.add(panel101);
-        mainpanel.add(panel102);
-        mainpanel.add(panel201);
-        container.add(mainpanel);
+        mainpanel.setLayout(clayout);
 
+        panel101.setBackground(Color.red);
+        panel101.setVisible(true);
+        panel102.setBackground(Color.white);
+        panel102.setVisible(true);
+        panel201.setBackground(Color.black);
+        panel201.setVisible(true);
+        mainpanel.add(panel101,st101);
+        mainpanel.add(panel102,st102);
+        mainpanel.add(panel201,st201);
+        container.add(mainpanel);
 
         menuitem1.addActionListener(this);
         menuitem2.addActionListener(this);
         menuitem3.addActionListener(this);
-
-        state = 101;
-        nowpanel = panel101;
 
         setTitle("TTCreater");
         setBounds(0,0,640,480);
@@ -71,21 +70,17 @@ public class UserInterface extends JFrame implements ActionListener{
     //action event on menuitem
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()){
-            case "Shift-Board":
-                state = 101;
-                clayout.show(panel101.getParent(),panel101.getName());
+            case st101:
+                clayout.show(panel101.getParent(),e.getActionCommand());
                 break;
-            case "Open":
-                state = 102;
-                clayout.show(panel102.getParent(),panel102.getName());
+            case st102:
+                clayout.show(panel102.getParent(),e.getActionCommand());
                 break;
-            case "Close":
-                state = 201;
-                clayout.show(panel102.getParent(),panel102.getName());
+            case st201:
+                clayout.show(panel102.getParent(),e.getActionCommand());
                 break;
             default :
-                state = -1;
-                System.out.println("error");
+                System.out.println("error: page no expected ");
                 break;
         }
     }
