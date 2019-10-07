@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>シフトメーカー</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/shiftmaker.css}">
+</head>
+
+<body>
+
+    <div id="shift-content">
+        <header>
+            <div id="config-area">設定</div>
+            <div id ="mode-area">閲覧モード</div>
+            <div id="shift-date-area">
+                <!-- TODO:後でURL変更 -->
+             <form th:action="@{/changeShiftPage}" method="get">
+                    <input type="date" name="date">
+                    <button>変更</button>
+             </form>
+            </div>
+        </header>
+        <div id="shift-board">
+            <table>
+                <tr>
+                    <th></th>
+                    <th th:each="titlecolum : ${shifttitle}">[[${titlecolum}]]</th>
+                </tr>
+                <tr th:each="memberline : ${shiftmemberline}">
+                    <td th:each="membercolum : ${memberline}">
+                        [[${membercolum}]]
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        
+    </div>
+<!--    <script src="js/shiftmaker.js"></script>-->
+    
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+form{
+    width:80%;
+    
+    margin:auto;
+    margin-top:80px;
+
+}
+
+#input-area{
+    text-align: center;
+}
+
+#input-area .input-element{
+    width:100%;
+    margin-top:30px;
+    margin-bottom:30px;
+    text-align: center;
+}
+
+#input-area .input-element input{
+    height:50px;
+    width:30%;
+    min-width:150px;
+    text-align: center;
+    border:solid 1px #2e2e2e;
+    border-radius:100px;
+    outline:none;
+}
+
+#login-bt{
+    text-align: center;
+}
+
+#login-bt button{
+    width:120px;
+    height:40px;
+    color:#EA5532;
+    background-color:white;
+    border:solid 1px #EA5532;
+    border-radius:100px;
+    transition:all 500ms ease;
+}
+
+#login-bt button:hover{
+    background-color:#EA5532;
+    border:solid 1px white;
+    color:white;
+}

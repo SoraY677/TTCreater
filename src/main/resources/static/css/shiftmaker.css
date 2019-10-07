@@ -1,0 +1,42 @@
+#shift-content{
+    position: absolute;
+    overflow:  visible;
+}
+
+#shift-content header{
+    position: fixed;
+    width:100%;
+    overflow: hidden;
+    padding:0 0 20px 0;
+    background-color:#EA5532;
+}
+#shift-content header #config-area{
+    color:white;
+    float:left;
+}
+
+#shift-content header #mode-area{
+    color:white;
+    float:right;
+}
+
+#shift-content header #shift-date-area{
+    clear:both;
+    width:100%;
+    text-align: center;
+}
+
+#shift-content #shift-board{
+    width:100%;
+    margin:100px 0 0 0;
+}
+
+
+#shift-content #shift-board table{
+    
+}
+
+#shift-content #shift-board table th,td{
+    padding :20px;
+    border :1px solid #2e2e2e;
+}
