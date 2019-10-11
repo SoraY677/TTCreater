@@ -6,3 +6,25 @@ body{
     left : 0;
     position: absolute;
 }
+h1{
+    border-bottom:1px solid #2e2e2e;
+}
+
+#content{
+    width:90%;
+    margin:auto;
+}
+
+button,input[type="submit"]{
+    height: 32px;
+    padding: 0 10px;
+    border: none;
+    background-color: #f01230;
+    color: white;
+    font-weight: 600;
+}
+
+button:hover,input[type="submit"]:hover{
+    transition:0.1s all ease ;
+    background-color:#ff98a5;
+}

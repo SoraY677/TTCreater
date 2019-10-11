@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3868bd71-face-417f-b842-8e1159df7299" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/DBAccesser/UserAuthRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/DBAccesser/UserInfoRepositry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/DBAccesser/UserInfoTableForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/HttpSessionListenerImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/LoginController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/LoginMvcConfigure.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/WebSecureConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/GeneticAlgorythm/GeneticAlgorythm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftApplyRepositry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftApplyTableForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftConfigRepositry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftConfigTableForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftTimeControlRepositry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftTimeControlTableForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftTimeelConfigRepositry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftTimeelConfigTableForm.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftMakerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftProcess.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+    <list default="true" id="df3befb2-749c-4d37-b913-7a560de68aa4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftapply/ShiftApplyController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/Controller.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/LoginMvcConfigure.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/AccessAuth/LoginMvcConfigure.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftConfigRepositry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftInfoDBAccesser/ShiftConfigRepositry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftMakerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftMakerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftProcess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/test1/shiftmaker/ShiftProcess.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/shiftmaker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/shiftmaker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shiftmaker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shiftmaker.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,18 +24,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="FxmlFile" />
-        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -51,58 +35,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="usePluginRegistry" value="true" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="createModuleGroups" value="true" />
-        <option name="importAutomatically" value="true" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="delegateBuildToMaven" value="true" />
-  </component>
-  <component name="ProjectId" id="1Qts2xZmoL8xCNYXice8wNdXTYf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1RxFZ9In4jDPfLTZuVK6VVlzIdy" />
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.36911643" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.example.test1.shiftmaker.UserInfoDBAccesser" />
-      <recent name="com.example.test1.AccessAuth.DBAccesser" />
-      <recent name="com.example.test1.AccessAuth" />
-      <recent name="com.example.test1.shiftmaker.GeneticAlgorythm" />
-      <recent name="com.example.test1" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Sora Yamaguchi\Desktop\test1\src\main\kotlin\com\example\test1\AccessAuth" />
-      <recent name="C:\Users\Sora Yamaguchi\Desktop\test1\src\main\resources\static" />
-      <recent name="C:\Users\Sora Yamaguchi\Desktop\test1\src\main\resources\static\css" />
-      <recent name="C:\Users\Sora Yamaguchi\Desktop\test1\src\main\resources\templates" />
-      <recent name="C:\Users\Sora Yamaguchi\Desktop\test1\src\main\resources\js" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -117,20 +61,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Kotlin.com.example.test1.Test1ApplicationKt">
-    <configuration name="com.example.test1 in test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="test1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.test1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.test1" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="test1" />
       <option name="VM_PARAMETERS" value="" />
@@ -139,12 +69,12 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.test1.Test1ApplicationKt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.example.test1.Test1ApplicationKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="com.example.test1.Test1ApplicationKt" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
       <module name="test1" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -152,12 +82,12 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.test1.Test1ApplicationKt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test1 [compile]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -167,44 +97,65 @@
               <set />
             </option>
             <option name="goals">
-              <list>
-                <option value="compile" />
-              </list>
+              <list />
             </option>
-            <option name="pomFileName" value="pom.xml" />
+            <option name="pomFileName" />
             <option name="profilesMap">
               <map />
             </option>
-            <option name="resolveToWorkspace" value="false" />
+            <option name="resolveToWorkspace" value="true" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-      <method v="2" />
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="" />
+      </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.com.example.test1.Test1ApplicationKt" />
-        <item itemvalue="JUnit.com.example.test1 in test1" />
-        <item itemvalue="Maven.test1 [compile]" />
-      </list>
-    </recent_temporary>
+    <configuration name="test1 []" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="true" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Kotlin.com.example.test1.Test1ApplicationKt" />
+      <item itemvalue="Maven.test1 []" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3868bd71-face-417f-b842-8e1159df7299" name="Default Changelist" comment="" />
-      <created>1568601023533</created>
+      <changelist id="df3befb2-749c-4d37-b913-7a560de68aa4" name="Default Changelist" comment="" />
+      <created>1570600892497</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568601023533</updated>
+      <updated>1570600892497</updated>
     </task>
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

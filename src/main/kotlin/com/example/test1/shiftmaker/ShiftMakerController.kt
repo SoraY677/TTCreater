@@ -14,7 +14,7 @@ class ShiftMakerController {
     @Autowired
     lateinit var shiftProcess : ShiftProcess
 
-    @RequestMapping("/login" )
+    @RequestMapping("/login" , "/shiftmaker","transShiftMaker")
     fun transShiftPage(model: Model) : String{
         var shiftboardTitles = shiftProcess.CreateShiftboardTitleColum()
         //今日の日付で行う
@@ -31,7 +31,6 @@ class ShiftMakerController {
         var shiftcolum = shiftProcess.CreateShiftboardbodyColum(date)
         //
         if(shiftcolum==null) {
-            println("こらこら")
             var nowdate= SimpleDateFormat("yyyy-MM-dd").format(Date())
             shiftcolum = shiftProcess.CreateShiftboardbodyColum(nowdate)
         }

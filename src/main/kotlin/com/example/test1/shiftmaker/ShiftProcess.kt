@@ -98,8 +98,8 @@ class ShiftProcess {
         var retArray =ArrayList<String>()
         var json1 = JSONObject(str)
         var arr = json1.getJSONArray("shift_details")
-        arr.forEach {
-            var json2 = JSONObject(it.toString())
+        for(i in 0..(arr.length()-1)) {
+            var json2 = JSONObject(arr[i].toString())
             retArray.add(json2.get("name").toString())
             var arr2 = json2.get("shift").toString().split(",")
             arr2.forEach{
@@ -109,4 +109,5 @@ class ShiftProcess {
         }
         return retArray
     }
+
 }

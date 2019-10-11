@@ -1,0 +1,36 @@
+header{
+    height:60px;
+    background-color:#f01230;
+    font-size:12px;
+    margin:0 0 12px 0;
+}
+
+
+header form{
+    margin:0 5px 0 5px;
+    height:100%;
+    float:left;
+}
+
+header form#trans-config{
+    float:right;
+}
+header img{
+    height:50%;
+}
+
+button.trans-page{
+    height:100%;
+    width:150px;
+    font-size:100%;
+    color:white;
+    background-color:#f01230;
+    border:none;
+    transition:0.1s all ease ;
+}
+
+button.trans-page:hover{
+    background-color:#ff98a5;
+}
+
+

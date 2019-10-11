@@ -1,42 +1,39 @@
 #shift-content{
-    position: absolute;
+    width:90%;
+    margin:auto;
     overflow:  visible;
 }
 
-#shift-content header{
-    position: fixed;
-    width:100%;
-    overflow: hidden;
-    padding:0 0 20px 0;
-    background-color:#EA5532;
-}
-#shift-content header #config-area{
-    color:white;
-    float:left;
-}
-
-#shift-content header #mode-area{
-    color:white;
-    float:right;
-}
-
-#shift-content header #shift-date-area{
-    clear:both;
+#shift-date-area{
     width:100%;
     text-align: center;
+    overflow: hidden;
 }
 
 #shift-content #shift-board{
     width:100%;
-    margin:100px 0 0 0;
+    height:60vh;
+    overflow:auto;
 }
 
-
-#shift-content #shift-board table{
-    
-}
 
 #shift-content #shift-board table th,td{
     padding :20px;
     border :1px solid #2e2e2e;
+}
+
+
+#auto-createbt{
+    width:100%;
+    text-align: right;
+}
+
+#auto-createbt button{
+    border-radius:50%;
+    width:80px;
+    height:80px;
+}
+
+#auto-createbt button img{
+    height:50%;
 }

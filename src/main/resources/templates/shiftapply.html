@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>シフト申請ページ</title>
+        <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{css/header.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{css/shiftapply.css}">
+    </head>
+
+    <body>
+
+        <header>
+            <form th:action="@{/transShiftMaker}" method="GET"><button class="trans-page"><img th:src="@{img/shiftmain.png}"><br>メイン画面</button></form>
+            <form th:action="@{/transShiftApply}" method="GET"><button class="trans-page"  name="monthSelect"><img th:src="@{img/shiftapply.png}"><br>シフト申請画面</button></form>
+            <form id="trans-config" action="" method="GET"><button class="trans-page"><img th:src="@{img/config.png}"><br>設定</button></form>
+        </header>
+
+
+        <div id="content">
+        <h1>シフト申請ページ</h1>
+        
+        <div id="shiftapply-content">    
+        
+        <form method="GET" id="month-select">
+            <button  class="month-arrow" name="monthSelect" th:value="${monthPrev}">◀</button>
+            <span id="apply-date" th:text="${monthNow}"></span>
+            <button class="moth-arrow" name="monthSelect" th:value="${monthNext}">▶</button>
+        </form>
+
+        <form method="GET">
+        <div id="shifttable-wrapper">
+        <table>
+            <tr>
+                <th></th>
+                <th th:each="titlecolum : ${shifttitle}">[[${titlecolum}]]</th>
+            </tr>
+
+            <tr>
+                <td>15</td>
+                <td><input type="checkbox" class="shiftbt" id="1" name="time" value="fugafuga"><label for="1"></label></td>
+                <td><input type="checkbox" class="shiftbt" id="2" name="time" value="hoge"><label for="2"></label></td>
+                <td><input type="checkbox" class="shiftbt"></td>
+                <td><input type="checkbox" class="shiftbt"></td>
+                <td><input type="checkbox" class="shiftbt"></td>
+            </tr>
+
+            <tr>
+                    <td>16</td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+            </tr>
+
+            <tr>
+                    <td>17</td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                    <td><input type="checkbox" class="shiftbt"></td>
+                </tr>
+
+            <tr>
+            </tr>
+        </table>
+        </div>
+        <div id="appleybt-wrapper">
+        <input id="applybt" type="submit" value="申請">
+        </div>
+        </form>
+        </div>
+        </div>
+    </body>
+</html>

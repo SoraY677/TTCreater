@@ -21,7 +21,13 @@ class ShiftConfigRepositry {
     //user_idからuser_passを取得
     //取得できない場合はnullになる
     fun findAllbyId(): ShiftConfigTableForm?{
-        val param = MapSqlParameterSource().addValue("id", httpSession.getAttribute("user_id"))
+        //店の番号を取得
+        var shopnum = httpSession.getAttribute("user_id").toString().toDouble() / 1000000 * 1000000
+        //番号のオーバフローを避けるよう，番号を戻す
+        val adminnumstr = (shopnum / 1000000).toInt().toString() + "000000"
+
+        val param = MapSqlParameterSource().addValue("id", adminnumstr)
+
         try {
             return jdbcTamplate.queryForObject(
                     "SELECT * FROM `$tableName` WHERE user_id = :id",
