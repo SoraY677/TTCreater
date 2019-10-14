@@ -1,4 +1,4 @@
-package com.example.test1.shiftmaker.ShiftInfoDBAccesser
+package com.example.test1.ShiftInfoDBAccesser
 
 import lombok.AllArgsConstructor
 import lombok.Data

@@ -13,7 +13,7 @@
         <header>
             <form th:action="@{/transShiftMaker}" method="GET"><button class="trans-page"><img th:src="@{img/shiftmain.png}"><br>メイン画面</button></form>
             <form th:action="@{/transShiftApply}" method="GET"><button class="trans-page"  name="monthSelect"><img th:src="@{img/shiftapply.png}"><br>シフト申請画面</button></form>
-            <form id="trans-config" action="" method="GET"><button class="trans-page"><img th:src="@{img/config.png}"><br>設定</button></form>
+            <form th:action="@{/logout}" id="logout"><button class="trans-page"><img th:src="@{img/logout.png}"><br>ログアウト</button></form>
         </header>
 
 
@@ -28,42 +28,18 @@
             <button class="moth-arrow" name="monthSelect" th:value="${monthNext}">▶</button>
         </form>
 
-        <form method="GET">
+        <form method="POST" th:action="@{/applyShift}">
         <div id="shifttable-wrapper">
         <table>
             <tr>
-                <th></th>
                 <th th:each="titlecolum : ${shifttitle}">[[${titlecolum}]]</th>
             </tr>
 
-            <tr>
-                <td>15</td>
-                <td><input type="checkbox" class="shiftbt" id="1" name="time" value="fugafuga"><label for="1"></label></td>
-                <td><input type="checkbox" class="shiftbt" id="2" name="time" value="hoge"><label for="2"></label></td>
-                <td><input type="checkbox" class="shiftbt"></td>
-                <td><input type="checkbox" class="shiftbt"></td>
-                <td><input type="checkbox" class="shiftbt"></td>
-            </tr>
-
-            <tr>
-                    <td>16</td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-            </tr>
-
-            <tr>
-                    <td>17</td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                    <td><input type="checkbox" class="shiftbt"></td>
-                </tr>
-
-            <tr>
+            <tr th:each="contentline : ${shiftcontent}">
+                <td th:each="contentcolum,contentstate : ${contentline}">
+                    <span th:if="${contentstate.index}==0">[[${contentcolum}]]</span>
+                    <input th:if="${contentstate.index}!=0" type="checkbox" class="shiftbt" th:id=${contentcolum} name="time" th:value="${contentcolum}"><label th:if="${contentstate.index}!=0" th:for=${contentcolum}></label>
+                </td>
             </tr>
         </table>
         </div>

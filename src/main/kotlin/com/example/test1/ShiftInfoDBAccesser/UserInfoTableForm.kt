@@ -1,4 +1,4 @@
-package com.example.test1.AccessAuth.DBAccesser
+package com.example.test1.ShiftInfoDBAccesser
 
 import lombok.AllArgsConstructor
 import lombok.Data
@@ -11,4 +11,5 @@ class UserInfoTableForm {
     var userId = ""
     var userName = ""
     var userStatus = 0
+    var userJob =""
 }

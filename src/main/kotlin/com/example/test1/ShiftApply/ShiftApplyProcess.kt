@@ -1,7 +1,8 @@
-package com.example.test1.shiftapply
+package com.example.test1.ShiftApply
 
-import com.example.test1.shiftmaker.ShiftInfoDBAccesser.ShiftConfigRepositry
-import com.example.test1.shiftmaker.ShiftInfoDBAccesser.ShiftTimeelConfigRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftApplyRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftConfigRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftTimeelConfigRepositry
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -13,6 +14,8 @@ class ShiftApplyProcess {
     lateinit var shiftConfigRepositry : ShiftConfigRepositry
     @Autowired
     lateinit var shiftConfigTimeelRepositry : ShiftTimeelConfigRepositry
+    @Autowired
+    lateinit var shiftApplyRepositry: ShiftApplyRepositry
 
     var tableraw = 0
 
@@ -36,6 +39,7 @@ class ShiftApplyProcess {
         }
 
         //一段目の生成
+        tableraw = 0;
         shiftRet.add("")
         for(shift_i in startTime..(endTime-timeElement) step timeElement){
             tableraw++
@@ -67,9 +71,9 @@ class ShiftApplyProcess {
 
         for(content_i in 1..dayNum){
             var retline = arrayListOf<String>()
-            retline.add(content_i.toString())
-            for(shiftc_i in 0..tableraw){
-                retline.add("")
+            retline.add((content_i).toString())
+            for(shiftc_i in 0..tableraw-1){
+                retline.add((content_i-1).toString()+"-"+shiftc_i.toString())
             }
             ret.add(retline)
         }
@@ -110,7 +114,7 @@ class ShiftApplyProcess {
         var daynum = arrayOf(31,28,31,30,31,30,31,31,30,31,30,31)
         var ret = 0;
         //二月以外はうるう年関係なし
-        if((month-1)!=2)ret = daynum[month-1]
+        if(month!=2)ret = daynum[month-1]
         //二月はうるう年の可能性考慮
         else{
             //うるう年計算
@@ -127,6 +131,47 @@ class ShiftApplyProcess {
         return ret
     }
 
+    //シフト申請をデータベースに記録する
+    public fun insertApplyShift(year:Int,month:Int,applyshift:List<String>){
+
+        var arr:ArrayList<ArrayList<Int>> = arrayListOf()
+        //配列初期化
+        for(line_i in 0..(calcDayNum(year,month)-1)){
+            var arrline:ArrayList<Int> = arrayListOf()
+            for(colum_i in 0..(tableraw-1)) {
+                arrline.add(0)
+            }
+            arr.add(arrline)
+        }
+        //条件に合ったものに1を追加
+        applyshift.forEach {
+            var index = it.split("-")
+            var index0 =index[0].toInt()
+            var index1 = index[1].toInt()
+            arr[index0][index1] = 1
+        }
+
+        for(line_i in 0..(calcDayNum(year,month)-1)){
+                //追加する日時
+                val date = year.toString()+month.toString()+(line_i+1).toString()
+                var shiftDetails = ""
+                for(colum_i in 0..(tableraw-2)){
+                    shiftDetails += arr[line_i][colum_i].toString() + ","
+                }
+                shiftDetails += arr[line_i][tableraw-1].toString()
+
+                //既に存在していたら
+                val flag = shiftApplyRepositry.countShiftDetails(date)
+                if(flag !=null) {
+                    if (flag.toString() != "0") {
+                        shiftApplyRepositry.updateShiftDetails(date, shiftDetails)
+                    } else {
+                        shiftApplyRepositry.insertShiftDetails(date, shiftDetails)
+                    }
+                }
+
+        }
+    }
 
 
 }

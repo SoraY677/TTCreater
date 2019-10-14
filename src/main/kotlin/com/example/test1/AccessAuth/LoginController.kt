@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam
 
 @Controller
 class LoginController {
-    @RequestMapping("/","login-page")
+    @RequestMapping("/","login-page","logout")
     fun transHomePage(model: Model, @RequestParam("error",defaultValue = "false") errorflag : String?):String{
         val errorEcho =
-                if (errorflag=="true") "ユーザIDまたはパスワードが違います!管理者に問い合わせてください!"
+                if (errorflag=="true") "ユーザIDまたはパスワードが違います"
                 else ""
         model.addAttribute("errorAlertFlag",errorEcho)
         return "index"

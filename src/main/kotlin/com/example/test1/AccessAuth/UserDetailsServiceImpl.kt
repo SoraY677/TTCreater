@@ -1,7 +1,7 @@
 package com.example.test1.AccessAuth
 
 import com.example.test1.AccessAuth.DBAccesser.UserAuthRepository
-import com.example.test1.AccessAuth.DBAccesser.UserInfoRepositry
+import com.example.test1.ShiftInfoDBAccesser.UserInfoRepositry
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority

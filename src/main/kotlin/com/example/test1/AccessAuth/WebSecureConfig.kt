@@ -50,6 +50,11 @@ class WebSecureConfig : WebSecurityConfigurerAdapter() {
                 .successForwardUrl("/shiftmaker")//成功時
                 .failureUrl("/login-page?error=true")
                 .permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login")
+                .permitAll();
         /*
         //ログアウト時の処理
         http.logout()

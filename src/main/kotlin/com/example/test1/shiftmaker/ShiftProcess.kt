@@ -1,12 +1,13 @@
 package com.example.test1.shiftmaker
 
-import com.example.test1.shiftmaker.ShiftInfoDBAccesser.ShiftConfigRepositry
-import com.example.test1.shiftmaker.ShiftInfoDBAccesser.ShiftTimeControlRepositry
-import com.example.test1.shiftmaker.ShiftInfoDBAccesser.ShiftTimeelConfigRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftConfigRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftTimeControlRepositry
+import com.example.test1.ShiftInfoDBAccesser.ShiftTimeelConfigRepositry
 import org.json.JSONObject
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.servlet.http.HttpSession
+import kotlin.system.exitProcess
 
 @Service
 class ShiftProcess {
@@ -41,9 +42,16 @@ class ShiftProcess {
         if(shiftTimeelConfig != null) {
             timeElement = shiftTimeelConfig.timeElement
         }
+        else{
+            println("shiftTimeelConfig == null")
+            exitProcess(1)
+        }
         if(shiftConfig != null) {
             startTime = shiftConfig.startTime
-            endTime  = shiftConfig.endTime
+            endTime = shiftConfig.endTime
+        }else{
+            println("shiftConfig == null")
+            exitProcess(1)
         }
 
         for(shift_i in startTime..(endTime-timeElement) step timeElement){
@@ -65,9 +73,11 @@ class ShiftProcess {
         return rethour + ":"+ retminute;
     }
 
+
+    //シフト生成
     fun CreateShiftboardbodyColum(date:String): ArrayList<ArrayList<String>>? {
 
-        var shiftRetLine:ArrayList<String> = ArrayList<String>()
+        var shiftRetLine = ArrayList<ArrayList<String>>()
         var shiftRet:ArrayList<ArrayList<String>> = ArrayList()
 
         //店の番号を取得
@@ -77,37 +87,49 @@ class ShiftProcess {
 
         var memberInfo = shiftTimeControlRepositry.findAllbyIdandDate(adminnumstr,date)
 
+
+
         //日付の指定がない場合
         if(date=="")return null
 
         if(memberInfo != null) {
 
-                shiftRetLine = formatJson(memberInfo.shiftDetails)
-                //メンバー情報を配列に入れていく
-
-                shiftRet.add(shiftRetLine)
-                return shiftRet
+            shiftRet = formatStr(memberInfo.shiftDetails)
+            return shiftRet
         } else{
                 return null
         }
-
     }
 
     //Json形式のデータを配列に入れて返す
-    private fun formatJson(str :String):ArrayList<String>{
-        var retArray =ArrayList<String>()
-        var json1 = JSONObject(str)
-        var arr = json1.getJSONArray("shift_details")
-        for(i in 0..(arr.length()-1)) {
-            var json2 = JSONObject(arr[i].toString())
-            retArray.add(json2.get("name").toString())
-            var arr2 = json2.get("shift").toString().split(",")
-            arr2.forEach{
-                if(it=="none")retArray.add("")
-                else retArray.add(it)
+    private fun formatStr(str :String):ArrayList<ArrayList<String>>{
+        var ret = ArrayList<ArrayList<String>>()
+
+        var retlinetmp = str.split("/")
+
+        retlinetmp.forEach{
+            var retlinetmp2 = ArrayList<String>()
+            var tmp = it.split(",")
+            tmp.forEach{
+                retlinetmp2.add(it)
             }
+            ret.add(retlinetmp2)
         }
-        return retArray
+
+        return ret
+    }
+
+    //管理者かどうか
+    public fun isAdmin():Boolean{
+        //店の番号を取得
+        var shopnum = httpSession.getAttribute("user_id").toString().toDouble() / 1000000 * 1000000
+        var adminnumstr = (shopnum / 1000000).toInt().toString() + "000000"
+        if(httpSession.getAttribute("user_id").toString() == adminnumstr){
+            return true
+        }
+        else{
+            return false
+        }
     }
 
 }

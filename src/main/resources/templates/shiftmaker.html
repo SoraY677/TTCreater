@@ -14,7 +14,7 @@
     <header>
             <form th:action="@{/transShiftMaker}" method="GET"><button class="trans-page"><img th:src="@{img/shiftmain.png}"><br>メイン画面</button></form>
             <form th:action="@{/transShiftApply}" method="GET"><button class="trans-page" name="monthSelect"><img th:src="@{img/shiftapply.png}"><br>シフト申請画面</button></form>
-            <form id="trans-config" action="" method="GET"><button class="trans-page"><img th:src="@{img/config.png}"><br>設定</button></form>
+            <form th:action="@{/logout}" id="logout"><button class="trans-page"><img th:src="@{img/logout.png}"><br>ログアウト</button></form>
     </header>
 
     <div id="shift-content">
@@ -22,7 +22,7 @@
             <div id="shift-date-area">
                 <!-- TODO:後でURL変更 -->
              <form th:action="@{/changeShiftPage}" method="get">
-                    <input type="date" name="date">
+                    <input type="date" name="date" th:value="${date}">
                     <button>変更</button>
              </form>
             </div>
@@ -32,7 +32,7 @@
                     <th></th>
                     <th th:each="titlecolum : ${shifttitle}">[[${titlecolum}]]</th>
                 </tr>
-                <tr th:each="memberline : ${shiftmemberline}">
+                <tr th:each="memberline : ${shiftmemberlist}">
                     <td th:each="membercolum : ${memberline}">
                         [[${membercolum}]]
                     </td>
@@ -41,7 +41,7 @@
             </table>
         </div>
         <div id="auto-createbt">
-        <form><button><img th:src="@{img/autocreate.png}"><br>自動生成</button></form>
+        <form th:if="${adminmode}==true" th:action="@{/createShiftAuto}" method="get"><button><img th:src="@{img/autocreate.png}"><br>自動生成</button></form>
         </div>
         
     </div>
